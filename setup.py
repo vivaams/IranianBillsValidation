@@ -14,7 +14,7 @@ setuptools.setup(
     url="https://github.com/vivaams/iranian_bills_validation",
     project_urls={
         "Bug Tracker": "https://github.com/vivaams/iranian_bills_validation/issues",
-    },,
+    },
     install_requires=[
           'jdatetime',
     ],
