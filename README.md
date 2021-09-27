@@ -4,6 +4,10 @@
 ## Dependencies
 #### To use this module you need to install [jdatetime](https://pypi.org/project/jdatetime/) and [python](https://www.python.org/)
 
+## Install
+
+    pip install iranian-bills-validation
+
 ## Usage
 ```python
 receipt = Receipt('9985235404124', '0000880000568')
