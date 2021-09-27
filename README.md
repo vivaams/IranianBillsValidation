@@ -9,5 +9,6 @@ if receipt.billing_isvalid():
 
 if receipt.payment_isvalid():
     print(receipt.payment_info())
-receipt.result()
+
+print(receipt.result())
 ```
