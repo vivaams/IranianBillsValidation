@@ -5,7 +5,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setuptools.setup(
     name="iranian_bills_validation",
-    version="1.0.0",
+    version="1.0",
     author="Amin Morakabi Sabet",
     author_email="vivaams@yahoo.com",
     description="This module checks and validates your bills and returns the required information",
