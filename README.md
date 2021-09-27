@@ -1,7 +1,7 @@
 # Iranian Bills Validation
 #### This module checks and validates your bills and returns the required information
 
-##### You will need [jdatetime]https://pypi.org/project/jdatetime/
+##### You will need [jdatetime](https://pypi.org/project/jdatetime/)
 
 ## Sample of user
 ```python
@@ -22,3 +22,6 @@ print(receipt.result())
 
 {"billing": {"is_valid": true, "billing_service": "Electricity", "billing_companycode": "041", "billing_filecode": "99852354"}, "payment": {"is_valid": true, "payment_periodcode": "05", "payment_yearcode": "1400", "payment_amount": "8800000"}}
 ```
+
+## اعتبارسنجی قبوض ایرانی
+##### این ماژول قبض های شما را بررسی و اعتبارسنجی می کند و اطلاعات مورد نیاز را برمی گرداند
