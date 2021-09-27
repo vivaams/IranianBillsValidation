@@ -1,9 +1,10 @@
 # Iranian Bills Validation
 #### This module checks and validates your bills and returns the required information
 
-##### You will need [jdatetime](https://pypi.org/project/jdatetime/)
+## Dependencies
+#### To use this module you need to install [jdatetime](https://pypi.org/project/jdatetime/) and [python](https://www.python.org/)
 
-## Sample of user
+## Usage
 ```python
 receipt = Receipt('9985235404124', '0000880000568')
 if receipt.billing_isvalid():
