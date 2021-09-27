@@ -20,12 +20,12 @@ class Receipt:
             x_num_x = 0
             if x_num > 7:
                 x_num = 2
-            
+
             x_num_x = int(self.billing_id[i]) * x_num
             plus_numbers = plus_numbers + x_num_x
 
             x_num = x_num + 1
-        
+
         module_result = plus_numbers % 11
         if module_result == 0 or module_result == 1:
             return 0
@@ -50,19 +50,20 @@ class Receipt:
         return check_service.get(service_code, '')
 
     def __billing_companycode(self):
-        company_code = self.billing_id[self.billing_length-5:self.billing_length-2]
+        company_code = self.billing_id[
+            self.billing_length-5:self.billing_length-2]
 
         return company_code
-    
+
     def __billing_filecode(self):
         file_code = self.billing_id[:self.billing_length-5]
 
         return file_code
-    
+
     def billing_isvalid(self):
         if int(self.billing_id[self.billing_length - 1]) == self.__billing_controldigit():
             return True
-        
+
         return False
 
     def billing_info(self):
@@ -71,7 +72,7 @@ class Receipt:
             'billing_companycode': self.__billing_companycode(),
             'billing_filecode': self.__billing_filecode(),
         }
-        
+
         return json.dumps(information)
 
     def __payment_controldigit1(self):
@@ -80,12 +81,12 @@ class Receipt:
         for i in range(self.payment_length-3, -1, -1):
             if x_num > 7:
                 x_num = 2
-            
+
             x_num_x = int(self.payment_code[i]) * x_num
             plus_numbers = plus_numbers + x_num_x
 
             x_num = x_num + 1
-        
+
         module_result = plus_numbers % 11
         if module_result == 0 or module_result == 1:
             return 0
@@ -111,12 +112,12 @@ class Receipt:
             x_num_x = 0
             if x_num > 7:
                 x_num = 2
-            
+
             x_num_x = int(final_code[i]) * x_num
             plus_numbers = plus_numbers + x_num_x
 
             x_num = x_num + 1
-        
+
         module_result = plus_numbers % 11
         if module_result == 0 or module_result == 1:
             return 0
@@ -125,12 +126,14 @@ class Receipt:
         return control_digit
 
     def __payment_periodcode(self):
-        period_code = self.payment_code[self.payment_length-4:self.payment_length-2]
+        period_code = self.payment_code[
+            self.payment_length-4:self.payment_length-2]
 
         return period_code
 
     def __payment_yearcode(self):
-        year_code = self.payment_code[self.payment_length-5:self.payment_length-4]
+        year_code = self.payment_code[
+            self.payment_length-5:self.payment_length-4]
 
         return str(int(year_code) + jdatetime.date.today().year)
 
@@ -138,11 +141,11 @@ class Receipt:
         amount = int('{}000'.format(self.payment_code[:self.payment_length-5]))
 
         return str(amount)
-    
+
     def payment_isvalid(self):
         if int(self.payment_code[self.payment_length - 2]) == self.__payment_controldigit1() and int(self.payment_code[self.payment_length - 1]) == self.__payment_controldigit2():
             return True
-        
+
         return False
 
     def payment_info(self):
@@ -151,7 +154,7 @@ class Receipt:
             'payment_yearcode': self.__payment_yearcode(),
             'payment_amount': self.__payment_amount(),
         }
-        
+
         return json.dumps(information)
 
     def result(self):
@@ -159,7 +162,7 @@ class Receipt:
         if self.billing_isvalid():
             billing_info = {'is_valid': True}
             billing_info.update(json.loads(self.billing_info()))
-        
+
         payment_info = {'is_valid': False}
         if self.payment_isvalid():
             payment_info = {'is_valid': True}
