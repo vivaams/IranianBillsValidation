@@ -163,14 +163,4 @@ class Receipt:
             payment_info = {'is_valid': True}
             payment_info.update(json.loads(self.payment_info()))
 
-        print(json.dumps({'billing': billing_info, 'payment': payment_info}))
-
-
-
-rec = Receipt('9985235404124', '0000880000568')
-'''if rec.billing_isvalid():
-    print(rec.billing_info())
-
-if rec.payment_isvalid():
-    print(rec.payment_info())'''
-rec.result()
+        return json.dumps({'billing': billing_info, 'payment': payment_info})
