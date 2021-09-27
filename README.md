@@ -1,4 +1,13 @@
 # Iranian Bills Validation
 #### This module checks and validates your bills and returns the required information
 
-## Status
+## Sample of user
+```
+receipt = Receipt('9985235404124', '0000880000568')
+if receipt.billing_isvalid():
+    print(receipt.billing_info())
+
+if receipt.payment_isvalid():
+    print(receipt.payment_info())
+receipt.result()
+```
