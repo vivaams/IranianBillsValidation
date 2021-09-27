@@ -165,4 +165,4 @@ class Receipt:
             payment_info = {'is_valid': True}
             payment_info.update(json.loads(self.payment_info()))
 
-        return {'billing': billing_info, 'payment': payment_info}
+        return json.dumps({'billing': billing_info, 'payment': payment_info})
