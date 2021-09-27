@@ -36,15 +36,18 @@ class Receipt:
     def __billing_service(self):
         service_code = int(self.billing_id[self.billing_length-2])
         check_service = {
-            1: 'آب',
-            2: 'برق',
-            3: 'گاز',
-            4: 'تلفن',
-            5: 'همراه',
-            6: 'شهرداری',
+            1: 'Water',
+            2: 'Electricity',
+            3: 'Gas',
+            4: 'Telephone',
+            5: 'Mobile',
+            6: 'Municipality',
+            7: 'Tax',
+            8: 'Driving offenses',
+            9: 'Driving offenses',
         }
 
-        return check_service.get(service_code, 'مجددا بررسی فرمایید')
+        return check_service.get(service_code, '')
 
     def __billing_companycode(self):
         company_code = self.billing_id[self.billing_length-5:self.billing_length-2]
@@ -75,7 +78,6 @@ class Receipt:
         x_num = 2
         plus_numbers = 0
         for i in range(self.payment_length-3, -1, -1):
-            x_num_x = 0
             if x_num > 7:
                 x_num = 2
             
@@ -163,4 +165,4 @@ class Receipt:
             payment_info = {'is_valid': True}
             payment_info.update(json.loads(self.payment_info()))
 
-        return json.dumps({'billing': billing_info, 'payment': payment_info})
+        return {'billing': billing_info, 'payment': payment_info}
