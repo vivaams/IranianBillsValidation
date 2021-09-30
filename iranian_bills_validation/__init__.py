@@ -1,0 +1,1 @@
+from iranian_bills_validation import Receipt
