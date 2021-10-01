@@ -10,6 +10,8 @@
 
 ## Usage
 ```python
+from IranianBillsValidation.Bill import Receipt
+
 receipt = Receipt('9985235404124', '0000880000568')
 if receipt.billing_isvalid():
     print(receipt.billing_info())

@@ -4,18 +4,18 @@ with open("README", "r", encoding="utf-8") as fh:
     long_description = fh.read()
 
 setup(
-    name='iranian_bills_validation',
-    packages=['iranian_bills_validation'],
-    version='1.1.2',
+    name='IranianBillsValidation',
+    packages=['IranianBillsValidation'],
+    version='0.0.1',
     license='MIT',
     description='This module checks and validates your bills and returns the required information',
     long_description=long_description,
     long_description_content_type="text/markdown",
     author='Amin Morakabi Sabet',
     author_email='vivaams@yahoo.com',
-    url='https://github.com/vivaams/iranian_bills_validation',
+    url='https://github.com/vivaams/IranianBillsValidation',
     project_urls={
-        "Bug Tracker": "https://github.com/vivaams/iranian_bills_validation/issues",
+        "Bug Tracker": "https://github.com/vivaams/IranianBillsValidation/issues",
     },
     keywords=['bills', 'validation'],
     install_requires=[
