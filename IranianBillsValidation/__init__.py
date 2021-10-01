@@ -1,1 +1,1 @@
-from Bill import Receipt
+from IranianBillsValidation.Bill import Receipt

@@ -6,7 +6,7 @@ with open("README", "r", encoding="utf-8") as fh:
 setup(
     name='IranianBillsValidation',
     packages=['IranianBillsValidation'],
-    version='0.0.1',
+    version='1.1.1',
     license='MIT',
     description='This module checks and validates your bills and returns the required information',
     long_description=long_description,
