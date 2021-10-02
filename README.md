@@ -6,7 +6,7 @@
 
 ## Install
 
-    pip install iranian-bills-validation
+    pip install IranianBillsValidation
 
 ## Usage
 ```python
